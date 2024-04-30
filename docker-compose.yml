@@ -3,17 +3,6 @@ services:
   app:  # Just a random name given to the container
     build:  # To specify a non standard Dockerfile name two peicees of data are added
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
-    volumes:
-      - /app/node_modules   # Explicty stating the folder inside the container must be used
-      - .:/app  # All other files in the /app directory on the container is mapped back to the local directory
-  tests:  # A second container that will be responsible for performing test
-    build: 
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - .:/app
-    command: ["npm", "run", "test"]  # Command that will override the default command from the Dockerfile.dev
+      - '80:80'
