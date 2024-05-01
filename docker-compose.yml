@@ -1,7 +1,7 @@
-version: '3'  # Its good practice to update version numbers
+version: '3'
 services:
-  app:  # Just a random name given to the container
-    build:  # To specify a non standard Dockerfile name two peicees of data are added
+  web:
+    build:
       context: .
       dockerfile: Dockerfile
     ports:
